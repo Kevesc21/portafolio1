@@ -16,7 +16,7 @@ const obtenerEntradaHtml = () => {
 
 export default defineConfig({
     appType: "mpa", 
-    base: process.env.DEPLOY_BASE_URL || "/portafolio1/",
+    base: process.env.DEPLOY_BASE_URL,
     build: {
         rollupOptions: {
             input: obtenerEntradaHtml(),
