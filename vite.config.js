@@ -5,7 +5,7 @@ import htmlPurge from "vite-plugin-purgecss";
 
 const obtenerEntradaHtml = () => {
     return Object.fromEntries(
-        glob.sync("./*.html", { ignore: ["./dist/**", "./node_modules/**"] }).map(
+        glob.sync("./**/*.html", { ignore: ["./dist/**", "./node_modules/**"] }).map(
             fileData => [
                 fileData.slice(0, fileData.length - path.extname(fileData).length),
                 resolve(__dirname, fileData)
@@ -25,14 +25,14 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             less: {
-                javascriptEnabled: true, // Habilita características avanzadas de Less
+                javascriptEnabled: true, // Habilita características avanzadas de Less
             },
         },
     },
     plugins: [
         htmlPurge({
-            content: [".//.html", ".//.js"], 
+            content: ["./**/*.html", "./**/*.js"], 
             safelist: ["active", "show"], 
-        })
-    ]
+        })
+    ]
 });
