@@ -1,0 +1,57 @@
+@import "grid.less";
+@import "minxiss.less";
+@import "variables.less";
+
+body {
+    font-family: @font-main;
+    background-color: @background-color;
+    color: @text-color;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: @primary-color;
+    padding: @spacing;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 @border-radius @border-radius;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 @spacing;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    &:hover {
+        color: @secondary-color;
+    }
+}
+
+section {
+    padding: @spacing * 2;
+    text-align: center;
+}
+
+#projects .container {
+    justify-content: center;
+}
+
+#contact {
+    background: @primary-color;
+    color: white;
+    padding: @spacing * 2;
+    border-radius: @border-radius @border-radius 0 0;
+}
