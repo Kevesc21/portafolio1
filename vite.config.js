@@ -5,7 +5,7 @@ import htmlPurge from "vite-plugin-purgecss";
 
 const obtenerEntradaHtml = () => {
     return Object.fromEntries(
-        glob.sync(".//.html", { ignore: ["./dist/", "./node_modules/*"] }).map(
+        glob.sync("./*.html", { ignore: ["./dist/**", "./node_modules/**"] }).map(
             fileData => [
                 fileData.slice(0, fileData.length - path.extname(fileData).length),
                 resolve(__dirname, fileData)
@@ -16,7 +16,7 @@ const obtenerEntradaHtml = () => {
 
 export default defineConfig({
     appType: "mpa", 
-    base: process.env.DEPLOY_BASE_URL,
+    base: process.env.DEPLOY_BASE_URL || "/portafolio1/",
     build: {
         rollupOptions: {
             input: obtenerEntradaHtml(),
